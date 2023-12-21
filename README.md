@@ -14,3 +14,7 @@ The Capstone Repo contains a README file with pre-existing **headers and bullet 
 
 Any changes or refinements to your Area of Interest should be reflected in the README, and it is expected that your description of the data will be more granular (including a Data Dictionary if feasible) compared to the Area of Interest submission.
 
+Thursday 21 of Dicember:
+- Finish text data notebook
+- Read all articles
+- Scrape twitter conversations
