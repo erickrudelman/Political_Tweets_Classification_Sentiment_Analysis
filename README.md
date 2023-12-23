@@ -18,3 +18,5 @@ Thursday 21 of Dicember:
 - Finish text data notebook
 - Read all articles
 - Scrape twitter conversations
+
+Friday 22 of Dicember:
