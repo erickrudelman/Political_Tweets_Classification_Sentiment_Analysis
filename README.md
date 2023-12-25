@@ -1,35 +1,18 @@
 # tweet_sentiment_analysis_capstone
 Scrape conversation on Twitter based on Keywords or Hashtags and perform Sentiment Analysis
+It is expected that your description of the data will be more granular (including a Data Dictionary if feasible) compared to the Area of Interest submission.
 
-Just checking if I could commit the changes in this file to the remote repo.
-
-The Capstone Repo contains a README file with pre-existing **headers and bullet points** to help guide your thoughts. You are required to fill this file in with a **Project Overview**. The overview should reflect the structure of your:
-
-- *Areas of Interest Submission*:
-- *explaining the Problem Area*:
-- *including those affected*:
-- *proposed Data Science solution*:
-- *impact of your solution*:
-- *description of your dataset*:
-
-Any changes or refinements to your Area of Interest should be reflected in the README, and it is expected that your description of the data will be more granular (including a Data Dictionary if feasible) compared to the Area of Interest submission.
-
-Thursday 21 of Dicember:
-- Finish text data notebook
-- Read all articles
-- Scrape twitter conversations
-
-Sunday 24th of December:
+==Sunday 24th of December==:
 
 Cover the scope of the project, define the objectives, framework and methodology. 
-- Finish the README file and start defining the dataset
+- Finish the README file and start defining the dataset==
 
 Monday 25th of December:
 Download the dataset, pre-process the data and perform some EDA to determine data issues, feature engineering opportunited and other observations.
 - Prepare the Jupyter Notebook
 
 Tuesday 26h of December
-- Presentation 
+- Presentation
 
 -------------------------------------------
 ## **Project Overview**
@@ -77,7 +60,7 @@ Our goal with this project is to go beyond just watching what's happening. We wa
 
 Here are some extra stats to consider:
 
-Around 550 million people use Twitter on average each month (that's our best estimate).
+Around 550 million people use Twitter on average each month.
 About 23% of adults worldwide use Twitter (according to Pew Research Center, 2023).
 It's worth noting that the percentage of adults using Twitter can vary a lot depending on things like where you live, your age, and how easy it is for you to get online.
 
@@ -94,8 +77,10 @@ The method of extracting information from online source called Web Scraping woul
 
 #### **Exploratory Data Analysis**:
 *Libraries used*
+
     - Numpy: Perform array mathematical computations
-    - PandasL Library to process data
+    
+    - Pandas: Library to process data
 
   
 #### **Natural Language Processing**: 
@@ -103,9 +88,9 @@ The method of extracting information from online source called Web Scraping woul
 *Extracting basic features from text data*
 Designing and building an algorithm with pre-built libraries in order to understand the meaning of words and translate their meaning into other valuable interpretations such as a Sentiment Analysis of the words.
 
-In the process of working with text, a **count of words** is a very important step, to determine the amount of words in each tweet. This is a very useful fisrt step in determining if the tone of the teet is either positive or negative. Just as the words, the characters can be counted with the same purpose.
+In the process of working with text, a **count of words** is a very important step, to determine the amount of words in each tweet. This is a very useful first step in determining if the tone of the tweet is either positive or negative. Just as the words, the characters can be counted with the same purpose.
 
-**Removing the stopwords** is also a common used practice before processing text. These inclued words such as 'the', 'a', 'an', 'in', etc. The *nltk* library is used for this instances. It allows for the text to be processed in the desired language.
+**Removing the stopwords** is also a common used practice before processing text. These inclued words such as 'the', 'a', 'an', 'in', etc. The *nltk* library is used for these instances. It allows for the text to be processed in the desired language.
 
 Another practice used in NPL is **extracting the amount of special characters** in the text, such as hashtags, which bring valuable information about the text we are dealing with. 
 
@@ -120,15 +105,17 @@ The following Data Science techniques are included in the Natural Language Proce
 
 **Stemming** is the method of removing suffices which change the tense of the word but not its meaning. When analyzing text in NLP, we aim for the base form of it, so removing suffices helps group words of the same root into one. 
 
-**Lemmatization** is a method similar to stemming, in which words are processed to its base form, however, in a lemmatization process words are converted to its root depending on the context of the word, as opossed to stemming where it only cuts off the suffix of thw rods. 
+**Lemmatization** is a method similar to stemming, in which words are processed to its base form, however, in a lemmatization process words are converted to its root depending on the context of the word, as opossed to stemming where it only cuts off the suffix of the words. 
 
 *Advanced text processing*
 
-**N-grams** is an dvanced text processing technique where algorithsm are used to predict which word/s are most likely to follow a given word. It is implemented using the *textblob* library 
+**N-grams** is an dvanced text processing technique where algorithms are used to predict which word/s are most likely to follow a given word. It is implemented using the *textblob* library 
 
 **Term Frequency** is the method of obtaining the ratio of the count of words in a specific frame of text, to the length of the that text.
 
 **Sentiment Analysis** is the analysis we want to implement once all of the previous steps are done and data has been processed as requiered. 
+
+[Dealing with Text Data](https://www.kaggle.com/code/prashant111/a-beginners-guide-to-dealing-with-text-data)
 
 #### **Clustering**:
 
