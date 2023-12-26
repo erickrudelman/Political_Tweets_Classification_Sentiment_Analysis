@@ -21,7 +21,7 @@ Social Listening is a powerful method for understanding public sentiments. In th
 When engaging in Social Listening, both quantitative and qualitative information can be delivered to comprehensively grasp the dynamics of the digital world. By tracking online discussions, one can decipher what people are saying, when, and why. These insights are invaluable for tailoring strategies to target audiences effectively.
 
 ### **Scope**
-The scope of this project extends beyond Social Listening and initiates with the acquisition of a robust dataset of Twitter conversations. Ideally, these conversations would be directly scraped from Twitter using the Twitter API. However, due to high associated costs, an alternative dataset has been obtained from _______.
+The scope of this project extends beyond Social Listening and initiates with the acquisition of a robust dataset of Twitter conversations. Ideally, these conversations would be directly scraped from Twitter using the Twitter API. However, due to high associated costs, an alternative dataset has been obtained from [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets).
 
 Following an analysis of the dataset to identify data quality issues, feature engineering opportunities, and other notable observations related to data processing, the data will undergo preprocessing for further analysis. The initial analysis will involve Sentiment Analysis to categorize conversations into positive, negative, or neutral tones. Additionally, features such as counts of the most positive and negative words, word cloud representations, and other descriptive visualizations will be extracted.
 
@@ -70,59 +70,86 @@ The project's scope encompasses the entire digital community actively or sporadi
 
 Furthermore, this initiative extends its consideration to those directly influenced by or contributing to the discussions, ensuring a comprehensive understanding of the impact and implications for individuals, organizations, and communities engaged in the dynamic discourse on Twitter.
 
-## *Proposed Data Science solution*:
+## *Proposed Data Science Solution*:
 
-#### **Web Scraping**: 
-The method of extracting information from online source called Web Scraping would've been the preffered method of building the dataset used for this project. In this capstone, the analysis is aimed to be directed to political conversation specifically from Twitter, social media platform that has very high costs for extracting tweets. For this reason, this critical part of the project will be outsourced from pre-built  datasets found on ______.
+#### **Web Scraping**:
+The method of extracting information from an online source, called Web Scraping, would have been the preferred method for building the dataset used in this project. In this capstone, the analysis is aimed at focusing on political conversations, specifically from Twitter—a social media platform with high costs for extracting tweets. For this reason, this critical part of the project will be outsourced from pre-built datasets found on [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets).
 
-#### **Exploratory Data Analysis**:
-*Libraries used*
+#### **Exploratory Data Analysis*:
+*Libraries Used*
 
-    - Numpy: Perform array mathematical computations
-    
-    - Pandas: Library to process data
+- Numpy: To perform array mathematical computations.
+- Pandas: A library to process data.
 
-  
-#### **Natural Language Processing**: 
+#### **Natural Language Processing**:
 
 *Extracting basic features from text data*
-Designing and building an algorithm with pre-built libraries in order to understand the meaning of words and translate their meaning into other valuable interpretations such as a Sentiment Analysis of the words.
 
-In the process of working with text, a **count of words** is a very important step, to determine the amount of words in each tweet. This is a very useful first step in determining if the tone of the tweet is either positive or negative. Just as the words, the characters can be counted with the same purpose.
+Designing and building an algorithm with pre-built libraries to understand the meaning of words and translate their meaning into other valuable interpretations, such as Sentiment Analysis of the words.
 
-**Removing the stopwords** is also a common used practice before processing text. These inclued words such as 'the', 'a', 'an', 'in', etc. The *nltk* library is used for these instances. It allows for the text to be processed in the desired language.
+In the process of working with text, a **count of words** is a crucial step in determining the number of words in each tweet. This is a useful first step in establishing whether the tone of the tweet is positive or negative. Just like words, characters can be counted for the same purpose.
 
-Another practice used in NPL is **extracting the amount of special characters** in the text, such as hashtags, which bring valuable information about the text we are dealing with. 
+**Removing stopwords** is also a commonly used practice before processing text. These include words such as 'the,' 'a,' 'an,' 'in,' etc. The *nltk* library is used for these instances. It allows the text to be processed in the desired language.
 
-**Identifying uppercase** words is also a valuable practice since uppercase words are often associated with expresions of anger and rage. Implementing this practice helps bring value to the analysis of the text.
+Another practice in NLP is **extracting the number of special characters** in the text, such as hashtags, which provide valuable information about the text being analyzed.
+
+**Identifying uppercase words** is also a valuable practice since uppercase words are often associated with expressions of anger and rage. Implementing this practice adds value to the text analysis.
 
 *Pre-processing steps to clean the data and obtain valuable features*
+
 The following Data Science techniques are included in the Natural Language Processing of this project.
-   
-**CountVectorization** Method based on a *SciKitLearn* library implemented to obtain each unique word from the text-data and the count for each words. When counting words, a common practice is to group them by amount, either 2 or 3, so instead of the CountVectorizar return each word separately, it can return a sequence of words that only make sense together.
 
-**Hashing Vectorization** is the practice of converting the text to a matrix counting the amount of token occurrences (count of unique words in the text data).
+**CountVectorization** Method based on the *SciKitLearn* library, implemented to obtain each unique word from the text data and the count for each word. When counting words, a common practice is to group them by amount, either 2 or 3, so instead of the CountVectorizer returning each word separately, it can return a sequence of words that only make sense together.
 
-**Stemming** is the method of removing suffices which change the tense of the word but not its meaning. When analyzing text in NLP, we aim for the base form of it, so removing suffices helps group words of the same root into one. 
+**Hashing Vectorization** is the practice of converting the text to a matrix, counting the number of token occurrences (count of unique words in the text data).
 
-**Lemmatization** is a method similar to stemming, in which words are processed to its base form, however, in a lemmatization process words are converted to its root depending on the context of the word, as opossed to stemming where it only cuts off the suffix of the words. 
+**Stemming** is the method of removing suffixes that change the tense of the word but not its meaning. When analyzing text in NLP, we aim for the base form of it, so removing suffixes helps group words of the same root into one.
+
+**Lemmatization** is a method similar to stemming, in which words are processed to their base form. However, in lemmatization, words are converted to their root depending on the context of the word, as opposed to stemming, where it only cuts off the suffixes of the words.
 
 *Advanced text processing*
 
-**N-grams** is an dvanced text processing technique where algorithms are used to predict which word/s are most likely to follow a given word. It is implemented using the *textblob* library 
+**N-grams** is an advanced text processing technique where algorithms are used to predict which word(s) are most likely to follow a given word. It is implemented using the *textblob* library.
 
-**Term Frequency** is the method of obtaining the ratio of the count of words in a specific frame of text, to the length of the that text.
+**Term Frequency** is the method of obtaining the ratio of the count of words in a specific frame of text to the length of that text.
 
-**Sentiment Analysis** is the analysis we want to implement once all of the previous steps are done and data has been processed as requiered. 
+**Sentiment Analysis** is the analysis we want to implement once all the previous steps are done, and the data has been processed as required.
 
 [Dealing with Text Data](https://www.kaggle.com/code/prashant111/a-beginners-guide-to-dealing-with-text-data)
 
 #### **Clustering**:
 
-There are at least six distinctive structures of social media crowds which form depending on the subject being discussed, the information sources being cited, the social networks of the people talking about the subject, and the leaders of the conversation. Each has a different social structure and shape: divided, unified, fragmented, clustered, and inward and outward hub and spokes.
+There are at least six distinctive structures of social media crowds that form depending on the subject being discussed, the information sources being cited, the social networks of the people talking about the subject, and the leaders of the conversation. Each has a different social structure and shape: divided, unified, fragmented, clustered, and inward and outward hub and spokes.
+
+#### **Logistic Regression**:
+
+Correlation between categorical values is calculated to predict if any given variable or word can be a good indicator if the tweet or handle is either from a Democrat or a Republican.
 
 ## *Impact of your solution*:
 
 The proposed solution holds the potential to significantly impact various sectors by offering a nuanced understanding of public sentiment and discourse on Twitter, particularly in the realm of politics. Through advanced text data analysis and clustering techniques, the project aims to uncover patterns, trends, and sentiment dynamics within the digital community. This insight is invaluable for businesses and brands seeking informed decision-making, politicians refining communication strategies, and individuals or groups aiming for enhanced community engagement. Additionally, the solution may contribute to academic advancements in social media studies, offering a comprehensive exploration of online conversations. By identifying emerging trends and providing a potential foundation for early warning systems, the project stands to empower stakeholders with timely and relevant information, fostering a more informed, targeted, and proactive approach to navigating the dynamic landscape of Twitter discussions on political topics.
 
 ## *Description of your dataset*:
+
+[Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets) 
+
+The dataset is publicly available on Kaggle and comprises data extracted from Twitter. It includes tweets from 2017-2018 from representatives of both the Democratic and Republican parties in the USA, organized into three columns:
+
+- Political Party
+- Handle
+- Tweet
+ 
+As indicated in the data source:
+
+- Some tweets in ExtractedTweets.csv are not (as far as I can tell) associated with a representative's individual account. For instance, @RepublicanStudy represents a committee, not a specific representative.
+- Tweets above a certain length were truncated to a length much shorter than what Twitter itself enforces.
+  
+Originally, the dataset contained 86,460 rows of data. However, it was cleaned and processed, resulting in 86,403 rows of data. The dataset initially included several duplicate tweets. Only those with repeated handles were removed, while duplicate tweets (mainly retweets) from different handles were treated as distinct tweets and retained in the dataset.
+
+The following changes were implemented in the dataset:
+
+- Checked for null values.
+- Removed duplicate tweets where the handle was also duplicated.
+- Created an "RT" binary column to mark all tweets that are retweets: 1 if it is a retweet, otherwise 0.
+- Created a "Hashtags" column that displays all hashtags, if any, for every tweet.
+- Created a list called "hashtag_list" containing all the hashtags that appear in the dataset.
