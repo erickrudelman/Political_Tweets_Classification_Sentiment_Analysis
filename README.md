@@ -138,3 +138,23 @@ The following changes were implemented in the dataset:
 - Created an "RT" binary column to mark all tweets that are retweets: 1 if it is a retweet, otherwise 0.
 - Created a "Hashtags" column that displays all hashtags, if any, for every tweet.
 - Created a list called "hashtag_list" containing all the hashtags that appear in the dataset.
+
+### Data Dictionary
+
+On the Repository you will finde the "ExtractedTweets.csv" file. This is the original data set. After some Exploratory Data Analysis, new features were extracted and new columns were created, to transform the dataset into a new table saved in the file "PoliticalTweets.csv". This analysis was performed in the file "1_EDA_Capstone.ipynb".
+
+Some important files, variables and features to take in consideration 
+#### Files
+
+- **1_EDA_Capstone.ipynb**: File with initial EDA on the original dataset.
+- **ExtractedTweets.csv**: Original dataset with 3 columns Political Party, Handle and Tweet
+- **PoliticalTweets.csv**: New dataset created after initial EDA. This dataset will be the one used throughout the rest of the capstone project.
+
+  #### Variables and Features
+  
+- **duplicate_tweets**: Shows ALL of the duplicate Tweets.
+- **duplicates_with_different_handle**: Shows ALL of the duplicate Tweets which are coming from different handles.
+- **df**: Original DataFrame which is outdated throughout the 1_EDA_Capstone.ipynb file.
+- **df_cleaned**: New DataFrame with the updated features and columns.
+- **hashtag_list**: A list with all of the hashtags that appear in the DataSet.
+ 
