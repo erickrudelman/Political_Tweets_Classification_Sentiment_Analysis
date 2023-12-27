@@ -1,20 +1,5 @@
-# tweet_sentiment_analysis_capstone
-Scrape conversation on Twitter based on Keywords or Hashtags and perform Sentiment Analysis
-It is expected that your description of the data will be more granular (including a Data Dictionary if feasible) compared to the Area of Interest submission.
+# Tweet_Sentiment_Analysis_Capstone
 
-==Sunday 24th of December==:
-
-Cover the scope of the project, define the objectives, framework and methodology. 
-- Finish the README file and start defining the dataset==
-
-Monday 25th of December:
-Download the dataset, pre-process the data and perform some EDA to determine data issues, feature engineering opportunited and other observations.
-- Prepare the Jupyter Notebook
-
-Tuesday 26h of December
-- Presentation
-
--------------------------------------------
 ## **Project Overview**
 Social Listening is a powerful method for understanding public sentiments. In the past, surveys were the primary means of gauging public opinion on specific topics. However, today, a more organic approach involves monitoring online conversations to glean real-time insights. Social Listening, achieved through the extraction and analysis of thousands, and ideally millions, of comments on social media platforms, has emerged as an effective way to gather data and empower businesses, individuals, and brands.
 
