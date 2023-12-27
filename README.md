@@ -123,6 +123,8 @@ The dataset is publicly available on Kaggle and comprises data extracted from Tw
 - Political Party
 - Handle
 - Tweet
+
+The dataset, once cleansed and transformed, contains 44,362 tweets associated to the Republican party and 42,041 tweets associated with the Democratic Party.
  
 As indicated in the data source:
 
@@ -147,7 +149,7 @@ Some important files, variables and features to take in consideration
 #### Files
 
 - **1_EDA_Capstone.ipynb**: File with initial EDA on the original dataset.
-- **ExtractedTweets.csv**: Original dataset with 3 columns Political Party, Handle and Tweet
+- **ExtractedTweets.csv**: Original dataset with 3 columns Party, Handle and Tweet
 - **PoliticalTweets.csv**: New dataset created after initial EDA. This dataset will be the one used throughout the rest of the capstone project.
 
   #### Variables and Features
