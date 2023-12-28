@@ -145,7 +145,7 @@ The following changes were implemented in the dataset:
 
 On the Repository you will find the "ExtractedTweets.csv" file. This is the original data set. After some Exploratory Data Analysis, new features were extracted and new columns were created, to transform the dataset into a new table saved into a file named "PoliticalTweets.csv". This analysis was performed in the file "1_EDA_Capstone.ipynb".
 
-Some important files, variables and features to take in consideration 
+Some important files, variables and features to take in consideration. 
 #### Files
 
 - **1_EDA_Capstone.ipynb**: File with initial EDA on the original dataset.
