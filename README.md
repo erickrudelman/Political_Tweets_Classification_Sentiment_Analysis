@@ -6,38 +6,75 @@ Social Listening is a powerful method for understanding public sentiments. In th
 When engaging in Social Listening, both quantitative and qualitative information can be delivered to comprehensively grasp the dynamics of the digital world. By tracking online discussions, one can decipher what people are saying, when, and why. These insights are invaluable for tailoring strategies to target audiences effectively.
 
 ### **Scope**
-The scope of this project extends beyond Social Listening and initiates with the acquisition of a robust dataset of Twitter conversations. Ideally, these conversations would be directly scraped from Twitter using the Twitter API. However, due to high associated costs, an alternative dataset has been obtained from [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets).
 
-Following an analysis of the dataset to identify data quality issues, feature engineering opportunities, and other notable observations related to data processing, the data will undergo preprocessing for further analysis. The initial analysis will involve Sentiment Analysis to categorize conversations into positive, negative, or neutral tones. Additionally, features such as counts of the most positive and negative words, word cloud representations, and other descriptive visualizations will be extracted.
+The scope of this project extends beyond Social Listening and initiates with the acquisition of a robust dataset of Twitter conversations. Initially, it was planned to directly scrape conversations from Twitter using the Twitter API. However, due to high associated costs and fundamental data quality issues observed with truncated text in the alternative dataset obtained from from [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets). A decision has been made to rectify this by directly scraping data from Twitter for Sprint 3.
 
-Furthermore, a clustering analysis will be conducted to develop a functional algorithm trained on pre-existing datasets. This algorithm will later identify new topic-related comments and assess the sentiment's alignment with the existing clusters. Can it accurately predict the cluster to which a new tweet belongs?
+Following an analysis of the dataset to identify and address data quality issues, as well as explore feature engineering opportunities and other notable observations related to data processing, the data will undergo preprocessing for further analysis. All tweets will be tokenized to lower case, removing punctuations, handles, hashtags, stop words, and links to ensure a standardized and cleaner dataset.
 
-For the clustering algorithm, pre-labeled datasets have been extracted to generate features for either Democrats or Republicans. The goal is to identify words indicative of political alignment, commonly used by each group (e.g., "pro-life" or "pro-choice").
+The initial analysis will involve Sentiment Analysis to categorize conversations into positive, negative, or neutral tones. Additionally, features such as counts of the most positive and negative words, word cloud representations, and other descriptive visualizations will be extracted.
 
-Additionally, a Logistic Regression, implemented in the form of a CountVectorizer, will convert political labels into binary forms. The input for the Logistic Regression will be vectorized text. Can the model accurately determine if a tweet is Democratic or Republican based on word counts?
+Furthermore, a clustering analysis will be conducted to develop a functional algorithm trained on our dataset. This algorithm will later identify new topic-related comments and assess the sentiment's alignment with the existing clusters, aiming to predict accurately the cluster to which a new tweet belongs.
+
+For the clustering algorithm, pre-labeled datasets have been extracted to generate features for either Democrats or Republicans, aiming to identify words indicative of political alignment commonly used by each group (e.g., "pro-life" or "pro-choice").
+
+In addition to the planned Logistic Regression using CountVectorizer, a pipeline will be implemented to model a Random Forest and a Naive Bayes, providing a more comprehensive analysis.
+
+The analysis will also explore the modeling of words in tweets and hashtags to predict if a tweet has a Democrat or Republican inclination. This involves leveraging the unique characteristics of language used by each political group.
+
+Furthermore, the project will consider potential applications of advanced techniques such as Neural Networks or Generative AI for more nuanced and sophisticated analyses. These approaches may offer enhanced capabilities in predicting sentiment, identifying political alignment, and exploring intricate patterns within the Twitter conversations dataset.
 
 ### **Objectives**
-This project focuses on a dataset containing political conversations on Twitter with the following objectives:
+This project focuses on analyzing political conversations on Twitter, specifically targeting Senators from both the Democrat and Republican parties in the USA. The primary objectives are outlined as follows:
 
-Extract Democrat vs. Republican Twitter conversations from a pre-built dataset.
-Implement Sentiment Analysis on the tweets in the dataset.
-Develop and apply a Clustering Algorithm to classify tweets as Democrat, Republican, or Neutral.
+1. **Data Acquisition:**
+   - Scrape political tweets from Senators of both the Democrat and Republican parties in the USA. This will be performed for Sprint 3.
+  
+2. **Exploratory Data Analysis (EDA):**
+   - Conduct EDA to extract valuable insights from the acquired dataset.
+   - Implement feature engineering techniques to enhance the dataset's analytical potential.
+
+3. **Data Cleaning:**
+   - Tokenize all tweets to standardize the text data and facilitate further analysis.
+   - Remove noise and irrelevant information to ensure a clean dataset.
+
+4. **Feature Representation:**
+   - Implement a Count Vectorizer to convert text data into a format suitable for machine learning models.
+
+5. **Modeling:**
+   - Run a Logistic Regression model to classify tweets into Democrat or Republican categories.
+   - Implement a pipeline for Naive Bayes and Random Forest models to provide a comprehensive analysis of the data.
+
+6. **Prediction:**
+   - Use the trained models to classify future tweets as either Republican or Democrat, based on the patterns identified during training.
+
+7. **Sentiment Analysis:**
+   - Perform sentiment analysis on tweets for each political party to gauge the emotional tone of the conversations.
+
+8. **Further Implementation:**
+   - Explore advanced techniques such as Neural Networks or Generative AI for more sophisticated analyses.
+   - Consider the application of these techniques to enhance sentiment analysis or discover intricate patterns within the political conversations dataset.
+
+By focusing on Senators' tweets and employing a combination of traditional machine learning and advanced modeling techniques, this project aims to gain insights into the sentiments and political affiliations expressed on Twitter. The comprehensive approach includes data cleaning, feature engineering, and the application of diverse models, setting the foundation for potential future advancements in the analysis of political discourse on social media.
 
 ## *Areas of Interest Submission*:
 
-The submitted Area of Interest centers around the comprehensive analysis of Twitter conversations, particularly within the domain of politics. The primary objective is to process the voluminous data generated from these conversations through a series of methodical steps.
+The submitted Area of Interest is dedicated to conducting a comprehensive analysis of Twitter conversations, with a specific focus on the domain of politics. The overarching objective is to systematically process the vast amount of data generated from these conversations through a series of well-defined steps.
 
-Firstly, the data will undergo a meticulous cleaning process, aimed at refining its quality and ensuring that subsequent analyses are based on reliable information. Following this, the extraction of valuable features from the cleaned dataset will be undertaken, contributing to a more nuanced understanding of the political discourse on Twitter.
+To begin with, a rigorous data cleaning process will be employed to enhance the quality of the dataset, ensuring subsequent analyses are built on reliable information. In light of recent information, the data cleaning process will now include tokenization, converting all tweets to lowercase, and removing punctuation, handles, hashtags, stop words, and links to standardize and refine the dataset to faciliate further analysis and modeling.
 
-The analysis will encompass both basic and advanced techniques in text data analysis. This multifaceted approach seeks to uncover patterns, trends, and underlying themes within political tweets, providing a rich foundation for subsequent investigations.
+Following the enhanced data cleaning, the extraction of valuable features from the refined dataset will be undertaken. This step aims to contribute to a more nuanced understanding of political discourse on Twitter, now taking into consideration the removal of noise and irrelevant information.
 
-A pivotal aspect of this endeavor involves the implementation of Sentiment Analysis. This analytical tool will be employed to discern and categorize the prevailing sentiments expressed in political tweets, thereby shedding light on the overall tone and mood within the Twitter political sphere.
+The analysis strategy encompasses both basic and advanced techniques in text data analysis. This multifaceted approach is designed to uncover patterns, trends, and underlying themes within political tweets, setting the stage for more in-depth investigations. The process includes the application of a Count Vectorizer for feature representation, allowing for a detailed examination of word and hashtags frequencies and their impact on political affiliations.
 
-Moreover, a clustering analysis will be conducted to discern inherent groupings within the dataset. The objective is to train robust datasets of political tweets through the identification of commonalities, allowing for the creation of distinct clusters. This, in turn, will enable the categorization of future tweets into relevant clusters, facilitating a dynamic understanding of evolving patterns and affiliations within the realm of political discourse on Twitter.
+A pivotal component of this initiative involves the implementation of Sentiment Analysis. This analytical tool will be utilized to discern and categorize prevailing sentiments expressed in political tweets, providing valuable insights into the overall tone and mood within the Twitter political sphere. Furthermore, sentiment analysis will be performed on tweets specific to each political party, enhancing the granularity of the analysis.
 
-By integrating these methodologies, the ultimate goal is to offer a comprehensive and insightful exploration of political conversations on Twitter, leveraging both qualitative and quantitative analyses to enhance our understanding of the complex dynamics at play within this digital space.
+Moreover, the project will incorporate a clustering analysis to identify inherent groupings within the dataset. Recent updates include the use of pre-labeled datasets extracted from Senators of both Democrat and Republican parties in the USA to generate features for clustering. The goal is to train robust datasets of political tweets by identifying commonalities, facilitating the creation of distinct clusters. This will enable the categorization of future tweets into relevant clusters, fostering a dynamic understanding of evolving patterns and affiliations within the realm of political discourse on Twitter.
+
+By integrating these methodologies, the ultimate goal remains to provide a comprehensive and insightful exploration of political conversations on Twitter. Leveraging both qualitative and quantitative analyses, the project aims to enhance our understanding of the complex dynamics at play within Twitter.
 
 ## *Explaining the Problem Area*:
+
+The vast influence of Twitter on shaping opinions and disseminating news raises concerns about the potential for echo chambers and the polarization of perspectives within the digital space. This project aims to address the challenge of understanding and mitigating the impact of social media on public discourse by analyzing political conversations on Twitter. By deciphering the underlying patterns and sentiments in these discussions, we seek to contribute valuable insights that may aid in fostering a more informed and balanced digital discourse, counteracting potential biases, and promoting a healthier online information ecosystem.
 
 The choice to focus on Twitter in this project makes sense when you consider its huge user base—over 500 million people use it every month around the world. It's like this buzzing hub where people share information and shape opinions. Recent studies found that a whopping 78% of Twitter users use it for news, and 63% feel more connected to the world because of it. These numbers show just how big of an impact Twitter has on our conversations and perspectives.
 
@@ -58,45 +95,67 @@ Furthermore, this initiative extends its consideration to those directly influen
 ## *Proposed Data Science Solution*:
 
 #### **Web Scraping**:
-The method of extracting information from an online source, called Web Scraping, would have been the preferred method for building the dataset used in this project. In this capstone, the analysis is aimed at focusing on political conversations, specifically from Twitter—a social media platform with high costs for extracting tweets. For this reason, this critical part of the project will be outsourced from pre-built datasets found on [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets).
+The method of extracting information from an online source, called Web Scraping, will be the following method for reconstruction the truncated dataset used in this project, which drags several data quality concerns. In this capstone, the analysis is aimed at focusing on political conversations, specifically from Twitter—a social media platform with high costs for extracting tweets. For this reason, the work of this project up to Spint 2, will be outsourced from pre-built datasets found on [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets). For Sprint 3, the dataset will be scraped. 
+
+Web scraping will be performed using the Twitter API within the Postman web application.
 
 #### **Exploratory Data Analysis*:
 *Libraries Used*
 
 - Numpy: To perform array mathematical computations.
 - Pandas: A library to process data.
+- Matplotlib: Data Viz
+- Seaborn: Data Viz
 
-#### **Natural Language Processing**:
+#### **Tokenizing**:
 
-*Extracting basic features from text data*
+To clean and preprocess text data, specifically tweets various techniques  commonly used in Natural Language Processing (NLP) and text analysis, are employed to enhance the quality and relevance of the text data. Let's break down the steps involved in the clean_tweets function:
 
-Designing and building an algorithm with pre-built libraries to understand the meaning of words and translate their meaning into other valuable interpretations, such as Sentiment Analysis of the words.
+**Import Libraries**:
 
-In the process of working with text, a **count of words** is a crucial step in determining the number of words in each tweet. This is a useful first step in establishing whether the tone of the tweet is positive or negative. Just like words, characters can be counted for the same purpose.
+The code imports necessary libraries, including nltk for natural language processing and re for regular expressions.
+Create a Lemmatizer:
 
-**Removing stopwords** is also a commonly used practice before processing text. These include words such as 'the,' 'a,' 'an,' 'in,' etc. The *nltk* library is used for these instances. It allows the text to be processed in the desired language.
+A lemmatizer from the nltk library is instantiated. Lemmatization involves reducing words to their base or root form, considering the context.
+Define the Cleaning Function:
 
-Another practice in NLP is **extracting the number of special characters** in the text, such as hashtags, which provide valuable information about the text being analyzed.
+The clean_tweets function is defined, taking a tweet as input.
+**Text Cleaning Steps**:
 
-**Identifying uppercase words** is also a valuable practice since uppercase words are often associated with expressions of anger and rage. Implementing this practice adds value to the text analysis.
+**Removing Handles, Hashtags and Mentions**:
 
-*Pre-processing steps to clean the data and obtain valuable features*
+Using regular expressions, the function removes Twitter handles (e.g., "@username") from the tweets.
+Removing Hashtags and Associated Words:
 
-The following Data Science techniques are included in the Natural Language Processing of this project.
+Another regular expression is used to eliminate hashtags and words that come together with hashtags from the tweets.
 
-**CountVectorization** Method based on the *SciKitLearn* library, implemented to obtain each unique word from the text data and the count for each word. When counting words, a common practice is to group them by amount, either 2 or 3, so instead of the CountVectorizer returning each word separately, it can return a sequence of words that only make sense together.
+**Removing Punctuation and Links**:
 
-**Hashing Vectorization** is the practice of converting the text to a matrix, counting the number of token occurrences (count of unique words in the text data).
+Punctuation and special characters, including hashtags, are removed from the tweets. Additionally, hyperlinks (URLs) are eliminated.
+Lowercasing:
 
-**Stemming** is the method of removing suffixes that change the tense of the word but not its meaning. When analyzing text in NLP, we aim for the base form of it, so removing suffixes helps group words of the same root into one.
+All characters in the tweet are converted to lowercase to standardize the text.
 
-**Lemmatization** is a method similar to stemming, in which words are processed to their base form. However, in lemmatization, words are converted to their root depending on the context of the word, as opposed to stemming, where it only cuts off the suffixes of the words.
+**Removing Extra Whitespace**:
 
-*Advanced text processing*
+Extra whitespace is removed by joining the words in the tweet.
 
-**N-grams** is an advanced text processing technique where algorithms are used to predict which word(s) are most likely to follow a given word. It is implemented using the *textblob* library.
+**Removing Stopwords**:
 
-**Term Frequency** is the method of obtaining the ratio of the count of words in a specific frame of text to the length of that text.
+Common stopwords (e.g., 'the,' 'a,' 'an') are removed using the stopwords list from the nltk library.
+
+**Lemmatization**:
+
+The lemmatization process is applied to convert words to their base form, enhancing the coherence of the text.
+
+**Handling Ellipsis**:
+
+The function removes three dots at the end of the final word, including the deletion of the truncated word itself.
+
+**Applying the Cleaning Function**:
+
+The clean_tweets function is applied to a column of tweets in the dataframe (df_cleaned), and the cleaned text is stored in a new column called 'Clean_Tweet.'
+This function encapsulates a series of preprocessing steps that are crucial for preparing text data for analysis. It aligns with the general principles outlined in the provided explanation of extracting basic and advanced features from text data in the context of Natural Language Processing.
 
 **Sentiment Analysis** is the analysis we want to implement once all the previous steps are done, and the data has been processed as required.
 
@@ -108,7 +167,19 @@ There are at least six distinctive structures of social media crowds that form d
 
 #### **Logistic Regression**:
 
-Correlation between categorical values is calculated to predict if any given variable or word can be a good indicator if the tweet or handle is either from a Democrat or a Republican.
+The correlation between categorical values is computed to discern whether specific variables or words can serve as reliable indicators of whether a tweet or handle belongs to either a Democrat or a Republican. In the logistic regression model, the target variable is the Is_Democrat column, which has been binarized (1 for Democrat and 0 for Republican).
+
+The logistic regression model is trained using the cleaned tweets and the hashtags column to model and predict the political party affiliation (Is_Democrat). This predictive model leverages the cleaned textual content and the presence of specific hashtags as features to classify tweets as either Democratic or Republican. The target variable (Is_Democrat) serves as the binary outcome for the logistic regression, capturing the political alignment associated with each tweet or handle.
+
+#### **Other Models**:
+
+A pipeline has been implemented to model the classification of tweets or handles as either Democrat or Republican using the Naive Bayes and Random Forest algorithms. In this approach, the target variable for both models is the `Is_Democrat` column, which has been binarized to represent Democrats as 1 and Republicans as 0.
+
+For the Naive Bayes model, the pipeline integrates text processing techniques such as Count Vectorization, a method based on the SciKitLearn library, which captures the unique words and their counts from the cleaned tweets and hashtags. This vectorized representation is then used as input for the Naive Bayes algorithm, aiding in the prediction of political affiliations based on the probabilistic nature of word occurrences.
+
+Similarly, the Random Forest model is incorporated into the pipeline, leveraging the same textual features. Random Forest, implemented via SciKitLearn, is a versatile ensemble learning method that utilizes multiple decision trees to make predictions. The pipeline streamlines the process of feature extraction, vectorization, and model training, enhancing the efficiency of the analysis.
+
+Both pipelines contribute to the comprehensive exploration of political discourse on Twitter by employing distinct machine learning algorithms to predict political affiliations. The binarized `Is_Democrat` column serves as the target variable for these models, facilitating the classification of tweets into either Democratic or Republican categories based on the learned patterns from the text data and hashtags.
 
 ## *Impact of your solution*:
 
@@ -118,45 +189,38 @@ The proposed solution holds the potential to significantly impact various sector
 
 [Republican vs Democrat Tweets](https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets) 
 
-The dataset is publicly available on Kaggle and comprises data extracted from Twitter. It includes tweets from 2017-2018 from representatives of both the Democratic and Republican parties in the USA, organized into three columns:
+This publicly available dataset on Kaggle provides a comprehensive collection of tweets extracted from Twitter, covering the years 2017-2018. The dataset includes tweets from representatives of both the Democratic and Republican parties in the USA, organized into three essential columns: Political Party, Handle, and Tweet.
 
-- Political Party
-- Handle
-- Tweet
+However, it's crucial to highlight a significant data quality issue within the dataset. Many tweets, especially those exceeding a certain length, have been truncated, leading to a loss of contextual information. This truncation poses challenges for comprehensive sentiment analysis and may impact the accuracy of interpreting the intended message within each tweet.
 
-The dataset, once cleansed and transformed, contains 44,362 tweets associated to the Republican party and 42,041 tweets associated with the Democratic Party.
- 
-As indicated in the data source:
+In response to these challenges, key modifications have been implemented to enhance the dataset:
 
-- Some tweets in ExtractedTweets.csv are not (as far as I can tell) associated with a representative's individual account. For instance, @RepublicanStudy represents a committee, not a specific representative.
-- Tweets above a certain length were truncated to a length much shorter than what Twitter itself enforces.
-  
-Originally, the dataset contained 86,460 rows of data. However, it was cleaned and processed, resulting in 86,403 rows of data. The dataset initially included several duplicate tweets. Only those with repeated handles were removed, while duplicate tweets (mainly retweets) from different handles were treated as distinct tweets and retained in the dataset.
+1. **Creation of Is_Democrat Column**:
 
-The following changes were implemented in the dataset:
+To facilitate predictive modeling, a new column named Is_Democrat was introduced. This binary column binarizes political party affiliations, assigning a label of 1 to tweets associated with the Democratic Party and 0 to those linked to the Republican Party.
 
-- Checked for null values.
-- Removed duplicate tweets where the handle was also duplicated.
-- Created an "RT" binary column to mark all tweets that are retweets: 1 if it is a retweet, otherwise 0.
-- Created a "Hashtags" column that displays all hashtags, if any, for every tweet.
-- Created a list called "hashtag_list" containing all the hashtags that appear in the dataset.
+2. **Tokenization and Text Cleaning**:
+
+In recognition of the importance of robust text processing, all tweets underwent tokenization and thorough cleaning. This process involved removing handles, hashtags, links, punctuation, and unnecessary whitespace. Additionally, a lemmatization step transformed words into their base form, promoting uniformity in the dataset. The resulting cleaned text was saved in a dedicated column named Cleaned_Tweets.
+
+The decision to scrape additional data in the upcoming sprint is driven by the acknowledgment of limitations imposed by the truncated dataset, particularly concerning sentiment analysis. Truncated tweets may lack the full context and nuances needed for a comprehensive sentiment analysis. Obtaining a more comprehensive and representative dataset through scraping aims to address this limitation, enabling a more accurate exploration of sentiment trends and patterns within political discourse on Twitter. This iterative approach reflects a commitment to refining data quality and enhancing the robustness of subsequent analyses
 
 ### Data Dictionary
-
-On the Repository you will find the "ExtractedTweets.csv" file. This is the original data set. After some Exploratory Data Analysis, new features were extracted and new columns were created, to transform the dataset into a new table saved into a file named "PoliticalTweets.csv". This analysis was performed in the file "1_EDA_Capstone.ipynb".
 
 Some important files, variables and features to take in consideration. 
 #### Files
 
 - **1_EDA_Capstone.ipynb**: File with initial EDA on the original dataset.
+- **Sprint_2_Capstone.ipynb**: File with further analysis after Sprint 1 Feedback.
 - **ExtractedTweets.csv**: Original dataset with 3 columns Party, Handle and Tweet
-- **PoliticalTweets.csv**: New dataset created after initial EDA. This dataset will be the one used throughout the rest of the capstone project.
 
   #### Variables and Features
   
 - **duplicate_tweets**: Shows ALL of the duplicate Tweets.
-- **duplicates_with_different_handle**: Shows ALL of the duplicate Tweets which are coming from different handles.
 - **df**: Original DataFrame which is outdated throughout the 1_EDA_Capstone.ipynb file.
 - **df_cleaned**: New DataFrame with the updated features and columns.
-- **hashtag_list**: A list with all of the hashtags that appear in the DataSet.
- 
+- **republican_hashtags**: List with all hashtags for republican senators.
+- **democrat_hashtags** : List with all hashtags for democrat senators.
+- **Retweet column**: Binarized column showing 1 for retweet and 0 for not retweet.
+- **Is_Democrat column**: Binarized column showing 1 for democrat and 0 for republican.
+- **Hashtags column**: List of hashtags appearing in each tweet.
