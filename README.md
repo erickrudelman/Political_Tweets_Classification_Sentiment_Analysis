@@ -113,13 +113,16 @@ To clean and preprocess text data, specifically tweets various techniques  commo
 
 **Import Libraries**:
 
-The code imports necessary libraries, including nltk for natural language processing and re for regular expressions.
-Create a Lemmatizer:
+imports necessary libraries, including nltk for natural language processing and re for regular expressions.
+
+**Create a Lemmatizer**:
 
 A lemmatizer from the nltk library is instantiated. Lemmatization involves reducing words to their base or root form, considering the context.
-Define the Cleaning Function:
+
+**Define the Cleaning Function**:
 
 The clean_tweets function is defined, taking a tweet as input.
+
 **Text Cleaning Steps**:
 
 **Removing Handles, Hashtags and Mentions**:
@@ -157,7 +160,9 @@ The function removes three dots at the end of the final word, including the dele
 The clean_tweets function is applied to a column of tweets in the dataframe (df_cleaned), and the cleaned text is stored in a new column called 'Clean_Tweet.'
 This function encapsulates a series of preprocessing steps that are crucial for preparing text data for analysis. It aligns with the general principles outlined in the provided explanation of extracting basic and advanced features from text data in the context of Natural Language Processing.
 
-**Sentiment Analysis** is the analysis we want to implement once all the previous steps are done, and the data has been processed as required.
+**Sentiment Analysis**:
+
+The analysis we want to implement once all the previous steps are done, and the data has been processed as required.
 
 [Dealing with Text Data](https://www.kaggle.com/code/prashant111/a-beginners-guide-to-dealing-with-text-data)
 
