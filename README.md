@@ -114,7 +114,7 @@ The CSV contained the user_id, name and username. The username, which is the sam
 
 After all scraping steps, this notebook is used again to convert the 2.RepublicanVsDemocratNew.json into a CSV. This will be the final dataset for the capstone.
 
-**Output File**: PoliticalUsernamesAndIds.csv, "DemocratVsRepublican.csv"
+**Output File**: PoliticalUsernamesAndIds.csv, RepublicanVsDemocrat.csv
 
 ##### **Second step**:
 
@@ -130,7 +130,7 @@ Python robot that loops over the id's in the PoliticalUsernamesAndIds.csv to ext
 
 abkjd........
 
-**Output File**: 2.RepublicanVsDemocratNew.json 
+**Output File**: 3.RepublicanVsDemocratNew.json 
 
 #### **Exploratory Data Analysis*:
 *Libraries Used*
@@ -265,7 +265,7 @@ Some important files, variables and features to take in consideration.
 - **tweets1_2.json**: Tweets extracted from the following 2 usernames, following RepAdams, using the *Tweet_extractor.ipynb* code. Code was ran on only these 2 users for testing purpose. Execution was successfull.
 - **tweets.json**: Tweets extracted from all of the other 423 user's using the *Tweet_extractor.ipynb* code.
 - **RepublicanVsDemocratNew.json**: file compiling the tweets from tweets1_2.json and tweets.json. The ones from RepAdamas.json came in a different format so they were compiled separately.
-- **2.RepublicanVsDemocratNew.json**: file compiling the RepublicanVsDemocratNew.json with the RepAdamas.json. This is the **final** file compiling all tweets in the dataset.
+- **3.RepublicanVsDemocratNew.json**: file compiling the RepublicanVsDemocratNew.json with the RepAdamas.json. This is the **final** file compiling all tweets in the dataset.
 
 ###### **CSV**
 - **ExtractedTweets.csv**: Original dataset extracted from Kaggle with 3 columns Party, Handle and Tweet. 
