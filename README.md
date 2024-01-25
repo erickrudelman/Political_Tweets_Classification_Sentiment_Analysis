@@ -99,6 +99,39 @@ The method of extracting information from an online source, called Web Scraping,
 
 Web scraping will be performed using the Twitter API within the Postman web application.
 
+##### **Firs step**:
+Gather the Twitter handles of all U.S. Senators, which will then be incorporated into a dataframe. Subsequently, the handles will be utilized to fetch the corresponding user_ids, as it is the user_id, not the username, that is essential for extracting tweets from each user's timeline.
+
+Upon creating a dataset containing the user_ids of each Senator, our primary objective is to extract tweets from their respective accounts and reconstruct the Republican vs. Democrat dataset.
+
+**Notebook**: twitter_hacking.ipynb
+
+This notebook reads the HTML from https://pressgallery.house.gov/member-data/members-official-twitter-handles into a list. It then uses it to create a dataframe and from it, extract all of the handles. This handles are then broken down into 5 different lists, in order the query them with the Twitter API v2 with the purpose of obtaining each Handle's user_id. This process is performed using Postman web app.
+
+After quering the usernames in Postman to obtain the user_ids, which was performed over 5 separate runs since the query allows up to 100 usernames per query, the JSON files obtained as a results of all queries were compiled together into one same file. This was then converted into a CSV. 
+
+The CSV contained the user_id, name and username. The username, which is the same as the Twitter Handle, was mapped with the first dataframe created from the list extracted from the HTML, to locate the 'Party' affiliation of each user, and save this value into a 'Party' column. The final result was saved into a csv file 'PoliticalUsernamesAndIds.csv' which will serve to scrape tweets from each of the user_ids.
+
+After all scraping steps, this notebook is used again to convert the 2.RepublicanVsDemocratNew.json into a CSV. This will be the final dataset for the capstone.
+
+**Output File**: PoliticalUsernamesAndIds.csv, "DemocratVsRepublican.csv"
+
+##### **Second step**:
+
+**Notebook**: Tweet_extractor.ipynb
+
+Python robot that loops over the id's in the PoliticalUsernamesAndIds.csv to extract up to 23 tweets from each user_id's timeline. This is done by making requests using the Twitter API v2.
+
+**Output File**: tweets.json, tweets1_2.json, RepAdamas.json 
+
+##### **Third step**:
+
+**notebook**: json_files_compiler.ipynb
+
+abkjd........
+
+**Output File**: 2.RepublicanVsDemocratNew.json 
+
 #### **Exploratory Data Analysis*:
 *Libraries Used*
 
@@ -213,11 +246,31 @@ The decision to scrape additional data in the upcoming sprint is driven by the a
 ### Data Dictionary
 
 Some important files, variables and features to take in consideration. 
-#### Files
+#### Documents
 
+##### *Notebooks*:
 - **1_EDA_Capstone.ipynb**: File with initial EDA on the original dataset.
 - **Sprint_2_Capstone.ipynb**: File with further analysis after Sprint 1 Feedback.
-- **ExtractedTweets.csv**: Original dataset with 3 columns Party, Handle and Tweet
+- **Sprint_3.ipynb**: Final capstone project
+
+###### *Twitter Scraping* 
+- **twitter_hacking.ipynb**: Notebook with code to extract all US Senator's Twitter username's and use this results to scrape the user_id from each username.
+- **Tweet_extractor.ipynb**: Python robot that loops over all user_ids and extracts tweets.
+- **json_files_compiler.ipynb**: Code that compiles all json files.
+
+##### *Files*
+
+###### **JSON**
+- **RepAdamas.json**: Tweets extracted only for user RepAdams. It was done separately in postman for result testing.
+- **tweets1_2.json**: Tweets extracted from the following 2 usernames, following RepAdams, using the *Tweet_extractor.ipynb* code. Code was ran on only these 2 users for testing purpose. Execution was successfull.
+- **tweets.json**: Tweets extracted from all of the other 423 user's using the *Tweet_extractor.ipynb* code.
+- **RepublicanVsDemocratNew.json**: file compiling the tweets from tweets1_2.json and tweets.json. The ones from RepAdamas.json came in a different format so they were compiled separately.
+- **2.RepublicanVsDemocratNew.json**: file compiling the RepublicanVsDemocratNew.json with the RepAdamas.json. This is the **final** file compiling all tweets in the dataset.
+
+###### **CSV**
+- **ExtractedTweets.csv**: Original dataset extracted from Kaggle with 3 columns Party, Handle and Tweet. 
+- **PoliticalUsernamesAndIds.csv**: Dataset with all usernames, user_ids and party affiliation. Used as main source to scrape tweets and build the dataset.
+- **RepublicanVsDemocrat.csv**: **Final** dataset scraped from scratch. This is the dataset used for the project, containing roughly 10,000 tweets.
 
   #### Variables and Features
   
@@ -229,3 +282,4 @@ Some important files, variables and features to take in consideration.
 - **Retweet column**: Binarized column showing 1 for retweet and 0 for not retweet.
 - **Is_Democrat column**: Binarized column showing 1 for democrat and 0 for republican.
 - **Hashtags column**: List of hashtags appearing in each tweet.
+
