@@ -97,7 +97,7 @@ Furthermore, this initiative extends its consideration to those directly influen
 
 For data acquisition, I independently conducted scraping using the Twitter API V2, focusing on retrieving political tweets. The Twitter API V2 allowed for efficient and targeted collection, enabling the extraction of valuable information from the platform. This approach facilitated the creation of a diverse and comprehensive dataset, essential for subsequent analyses. The use of the Twitter API V2 provided real-time access to tweets, ensuring the inclusion of the latest and most relevant data in the project.
 
-#### **Exploratory Data Analysis*:
+#### **Exploratory Data Analysis**:
 *Libraries Used*
 
 - Numpy: To perform array mathematical computations.
