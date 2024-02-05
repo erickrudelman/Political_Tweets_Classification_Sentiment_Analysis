@@ -1,7 +1,7 @@
 # Tweet_Sentiment_Analysis_Capstone
 
 ## **Project Overview**
-Social Listening is a powerful method for understanding public sentiments. In the past, surveys were the primary means of gauging public opinion on specific topics. However, today, a more organic approach involves monitoring online conversations to glean real-time insights. Social Listening, achieved through the extraction and analysis of thousands, and ideally millions, of comments on social media platforms, has emerged as an effective way to gather data and empower businesses, individuals, and brands.
+Social Listening is a powerful method for understanding public sentiment. In the past, surveys were the primary means of gauging public opinion on specific topics. However, today, a more organic approach involves monitoring online conversations to glean real-time insights. Social Listening, achieved through the extraction and analysis of thousands, and ideally millions, of comments on social media platforms, has emerged as an effective way to gather data and empower businesses, individuals, and brands.
 
 When engaging in Social Listening, both quantitative and qualitative information can be delivered to comprehensively grasp the dynamics of the digital world. By tracking online discussions, one can decipher what people are saying, when, and why. These insights are invaluable for tailoring strategies to target audiences effectively.
 
